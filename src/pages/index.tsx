@@ -1,21 +1,7 @@
 import React from 'react'
-import { useQuery, gql } from "@apollo/client";
-const GET_POSTS = gql`
-  query {
-  users{
-    _id
-    name
-    email
-    products {
-      _id
-      productName
-      reviews {
-        comment
-      }
-    }
-  }
-}
-`;
+import { useQuery,  } from "@apollo/client";
+import {GET_POSTS } from '../Query/users'
+import Login from '../components/Modals/Login'
 const index = () => {
   const { error, loading, data } = useQuery(GET_POSTS);
 
@@ -27,9 +13,9 @@ const index = () => {
   const { users } = data
   return (
     <div>
-
+      <Login />
       {
-        users?.map((user) =>{
+        users?.map((user: any) =>{
           return (
             <h1>
               {user.name}
