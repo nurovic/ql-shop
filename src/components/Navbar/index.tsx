@@ -1,25 +1,20 @@
 import React from "react";
-import sliceLoginModal from '@/store/LoginModalSlice'
-import sliceRegisterModal from '@/store/RegisterModalSlice'
+import ProfilNav from './ProfilNav'
+import Link from 'next/link';
 
-const index = () => {
-    const loginModal = sliceLoginModal();
-    const registerModal = sliceRegisterModal();
-    return (
+
+const index : React.FC  = () => {
+
+  return (
     <div className="border-b-2 bg-mainColor">
       <div className="container mx-auto bg-main-color flex justify-between h-12 items-center text-white">
-        <div>Logo</div>
+        <Link href="/">Logo</Link>
         <div className="flex">
-          <div>ürünler</div>
+          <Link href="/products">ürünler</Link>
           <div>ARA</div>
         </div>
         <div className="flex">
-          <button
-          onClick={loginModal.onOpen}
-          className="mr-2">Login</button>
-          <button
-          onClick={registerModal.onOpen}
-          >Register</button>
+        <ProfilNav />
         </div>
       </div>
     </div>
