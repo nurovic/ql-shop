@@ -1,7 +1,7 @@
-import { gql } from "@apollo/client"
+import { gql } from "@apollo/client";
 
 const GET_PRODUCT_ID = gql`
-query productById($id: string){
+query GetProductId($id: ID!){
   productById(id: $id) {
     _id
     productName
@@ -19,7 +19,7 @@ query productById($id: string){
     }
   }
 }
-
 `
 
 export {GET_PRODUCT_ID}
+

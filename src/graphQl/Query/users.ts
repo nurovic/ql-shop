@@ -17,3 +17,4 @@ const GET_POSTS = gql`
 }`
 
 export {GET_POSTS}
+
