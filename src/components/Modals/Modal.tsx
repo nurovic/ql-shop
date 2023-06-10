@@ -29,7 +29,7 @@ const Modal: React.FC<ModalProps> = ({
   secondaryActionLabel,
 }) => {
   const [showModal, setShowModal] = useState(isOpen);
-
+  console.log("LOGIN MODA3L")
   useEffect(() => {
     setShowModal(isOpen);
   }, [isOpen]);

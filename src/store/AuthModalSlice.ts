@@ -1,3 +1,4 @@
+import { checkCustomRoutes } from 'next/dist/lib/load-custom-routes';
 import { create } from 'zustand';
 
 interface AuthModalStore {
@@ -11,7 +12,8 @@ interface IAuth {
 const sliceAuthModal = create<AuthModalStore>((set) => ({
   auth: {
     name: ""
-  }
+  },
+  checkAuth: false
 
 }));
 

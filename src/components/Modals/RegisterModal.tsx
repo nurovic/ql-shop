@@ -12,7 +12,7 @@ import Button from "../Button";
 import sliceRegisterModal from '@/store/RegisterModalSlice'
 import sliceLoginModal from '@/store/LoginModalSlice'
 
-const RegisterModal= () => {
+function RegisterModal () {
   const registerModal = sliceRegisterModal();
   const loginModal = sliceLoginModal();
 
@@ -37,7 +37,7 @@ const RegisterModal= () => {
     setIsLoading(true);
 
   }
-
+console.log("Register")
   const onToggle = useCallback(() => {
     registerModal.onClose();
     loginModal.onOpen();

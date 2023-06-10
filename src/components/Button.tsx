@@ -28,9 +28,9 @@ const Button: React.FC<ButtonProps> = ({
         hover:opacity-80
         transition
         ${wfull || 'w-full'} 
-        ${outline ? 'bg-white' : 'bg-rose-500'}
-        ${outline ? 'border-black' : 'border-rose-500'}
-        ${outline ? 'text-black' : 'text-white'}
+        ${outline ? 'bg-rose-200' : 'bg-rose-500'}
+        ${outline ? 'border-rose-300' : 'border-rose-500'}
+        ${outline ? 'text-white' : 'text-white'}
         ${small ? 'text-sm' : 'text-md'}
         ${small ? 'py-1' : 'py-3'}
         ${small ? 'font-light' : 'font-semibold'}
