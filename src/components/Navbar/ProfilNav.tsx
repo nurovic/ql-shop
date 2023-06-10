@@ -12,7 +12,7 @@ const ProfilNav = () => {
 
   return (
     <div>
-      {authModal?.checkAuth === false ? 
+      {authModal?.auth.name === "" ? 
         <div>
           <button onClick={loginModal.onOpen} className="mr-2">
             Login
@@ -25,7 +25,6 @@ const ProfilNav = () => {
         </button>
       )}
 
-    {loginModal.isOpen ?? <LoginModal /> }
     </div>
   );
 };

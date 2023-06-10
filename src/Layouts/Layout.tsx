@@ -9,10 +9,11 @@ interface LayoutProps {
 }
 const Layout = ({children}: LayoutProps) => {
   const loginModal = sliceLoginModal();
-
+  console.log(loginModal.isOpen)
   return (
     <div>
         <Navbar />
+        {loginModal.isOpen ? <LoginModal />:false}
         <main>{children}</main>
     </div>
   )

@@ -10,42 +10,42 @@ const ImageSlide = () => {
         className="h-96"
         alt="Picture of the author"
       />
-      <div className="flex mt-2 ">
-      <Image
-        src="/images/product.jpg"
-        className="object-cover	h-24 w-24 mr-2"
-        width={180}
-        height={180}
-        alt="Picture of the author"
-      /> 
-      <Image
-        src="/images/product.jpg"
-        className="object-cover	h-24 w-24 mr-2"
-        width={180}
-        height={180}
-        alt="Picture of the author"
-      /> 
-      <Image
-        src="/images/product.jpg"
-        className="object-cover	h-24 w-24 mr-2"
-        width={180}
-        height={180}
-        alt="Picture of the author"
-      /> 
-      <Image
-        src="/images/product.jpg"
-        className="object-cover	h-24 w-24 mr-2"
-        width={180}
-        height={180}
-        alt="Picture of the author"
-      /> 
-      <Image
-        src="/images/product.jpg"
-        className="object-cover	h-24 w-24 mr-2"
-        width={180}
-        height={180}
-        alt="Picture of the author"
-      /> 
+      <div className="flex mt-2  overflow-auto">
+        <Image
+          src="/images/product.jpg"
+          className="object-cover	h-24 w-24 mr-2"
+          width={180}
+          height={180}
+          alt="Picture of the author"
+        />
+        <Image
+          src="/images/product.jpg"
+          className="object-cover	h-24 w-24 mr-2"
+          width={180}
+          height={180}
+          alt="Picture of the author"
+        />
+        <Image
+          src="/images/product.jpg"
+          className="object-cover	h-24 w-24 mr-2"
+          width={180}
+          height={180}
+          alt="Picture of the author"
+        />
+        <Image
+          src="/images/product.jpg"
+          className="object-cover	h-24 w-24 mr-2"
+          width={180}
+          height={180}
+          alt="Picture of the author"
+        />
+        <Image
+          src="/images/product.jpg"
+          className="object-cover	h-24 w-24 mr-2"
+          width={180}
+          height={180}
+          alt="Picture of the author"
+        />
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ import sliceLoginModal from "@/store/LoginModalSlice";
 import sliceAuthModal from "@/store/AuthModalSlice";
 import { headers } from "next/dist/client/components/headers";
 
-function LoginModal () {
+const LoginModal = () => {
   const registerModal = sliceRegisterModal();
   const loginModal = sliceLoginModal();
   const authModal = sliceAuthModal();
@@ -29,15 +29,16 @@ function LoginModal () {
 
 
 const [loginPost ,{ data, loading, error} ] = useMutation(LogIn);
-authModal.auth.name = data?.signin?.user?.name
-console.log("LOGIN MODAL")
-const onSubmit: SubmitHandler<FieldValues> = (loginData: any ) => {
+
+const onSubmit: SubmitHandler<FieldValues> = async (loginData: any ) => {
   setIsLoading(true);
-  loginPost({
+  const res = await loginPost({
     variables : loginData
   })
-  console.log("LOGIN MODAL2")
+  authModal.auth.name = res.data?.signin?.user?.name
+  loginModal.onClose();
   setIsLoading(false);
+
     // if (loading) return 'Submitting...';
     // if (error) return `Submission error! ${error.message}`;
   

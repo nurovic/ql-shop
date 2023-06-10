@@ -1,8 +1,8 @@
-import { checkCustomRoutes } from 'next/dist/lib/load-custom-routes';
 import { create } from 'zustand';
 
 interface AuthModalStore {
   auth: IAuth;
+  checkAuth: Boolean
 }
 
 interface IAuth {
