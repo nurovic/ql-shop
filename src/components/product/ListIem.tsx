@@ -1,9 +1,11 @@
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import Button from "../Button";
-const ListIem = () => {
+
+const ListIem = ({ product }) => {
   const handleAddToFavourite = () => {
-    console.log("Add To Favourite");
+    console.log("Add To Favourite", product._id);
   };
   return (
     <div className="rounded-lg border border-gray-200 mr-6 mb-8">
@@ -16,15 +18,18 @@ const ListIem = () => {
           alt="Picture of the author"
         />
       </div>
-      <div className="flex flex-col mt-2">
-        <div>Product Name</div>
-        <div className="mb-2">Price</div>
+      <Link href={'/product/' + `${product._id}`} className="flex flex-col mt-2">
+        <div className="pl-2">{product.productName}</div>
+        <div className="pl-2 mb-2">{product.price.toLocaleString("en")} </div>
         <Button
           small
           label={"Add To Favourite"}
-          onClick={handleAddToFavourite}
+          onClick={(e) => {
+            e.preventDefault();
+            handleAddToFavourite();
+          }}
         />
-      </div>
+      </Link>
     </div>
   );
 };

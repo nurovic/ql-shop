@@ -20,6 +20,26 @@ query GetProductId($id: ID!){
   }
 }
 `
+const GET_PRODUCTS =gql`
+query productList {
+    products{
+      _id
+      productName
+      description
+      price
+      count
+      user {
+        name
+      }
+      reviews {
+        comment
+        userId {
+          name
+        }
+      }
+    }
+  }
+`
 
-export {GET_PRODUCT_ID}
+export {GET_PRODUCT_ID, GET_PRODUCTS}
 

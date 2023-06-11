@@ -1,24 +1,19 @@
 import React, {useState} from 'react'
 import ListItem from '../../components/product/ListIem'
+import { useQuery} from '@apollo/client';
+import { GET_PRODUCTS } from '../../graphQl/Query/product'
 
 const index = () => {
-  const [list, useList] = useState([
-    {name:"f"}, {name:"asd"},
-    {name:"f"}, {name:"asd"},
-    {name:"f"}, {name:"asd"},
-    {name:"f"}, {name:"asd"},
-    {name:"f"}, {name:"asd"},
-    {name:"f"}, {name:"asd"},
-    {name:"f"}, {name:"asd"},
-    {name:"f"}, {name:"asd"},
-    {name:"f"}, {name:"asd"},
-    
-  ])
+  const { error, loading, data } = useQuery( GET_PRODUCTS );
+  console.log(data)
   return (
     <div className="container mx-auto mt-4 ">
       <div className="flex flex-wrap">
-        {list?.map((d) => {
-          return <ListItem />;
+        {data?.products?.map((product) => {
+          return <ListItem 
+          product={product}
+          key={product._id}
+          />;
         })}
       </div>
     </div>
