@@ -5,7 +5,6 @@ import { GET_PRODUCTS } from '../../graphQl/Query/product'
 
 const index = () => {
   const { error, loading, data } = useQuery( GET_PRODUCTS );
-  console.log(data)
   return (
     <div className="container mx-auto mt-4 ">
       <div className="flex flex-wrap">
