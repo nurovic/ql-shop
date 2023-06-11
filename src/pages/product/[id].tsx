@@ -9,21 +9,15 @@ import { useRouter } from "next/router";
 const index = () => {
 
   const router = useRouter();
-  const id = router.query.id
+  const {id} = router.query
 
-
-  useEffect(() => {
-
-  }, [])
 
   const { error, loading, data } = useQuery(GET_PRODUCT_ID, {
     variables: {
        id
     },
   });
-    console.log(data, loading, error)
-  const getProductId = async () => {
-  }
+
   return (
     <div className="container mx-auto ">
       <div className="flex mt-4 h-[70vh] ">

@@ -1,11 +1,28 @@
-import React from 'react'
-import Image from 'next/image';
+import React, {useState} from 'react'
+import ListItem from '../../components/product/ListIem'
 
 const index = () => {
+  const [list, useList] = useState([
+    {name:"f"}, {name:"asd"},
+    {name:"f"}, {name:"asd"},
+    {name:"f"}, {name:"asd"},
+    {name:"f"}, {name:"asd"},
+    {name:"f"}, {name:"asd"},
+    {name:"f"}, {name:"asd"},
+    {name:"f"}, {name:"asd"},
+    {name:"f"}, {name:"asd"},
+    {name:"f"}, {name:"asd"},
+    
+  ])
   return (
-    <div>products
+    <div className="container mx-auto mt-4 ">
+      <div className="flex flex-wrap">
+        {list?.map((d) => {
+          return <ListItem />;
+        })}
+      </div>
     </div>
-  )
+  );
 }
 
-export default index
+export default index  
