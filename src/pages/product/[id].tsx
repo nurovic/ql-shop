@@ -22,7 +22,9 @@ const index = () => {
     <div className="container mx-auto ">
       <div className="flex mt-4 h-[70vh] ">
         <ImageSlide />
-        <ProductInfo />
+        <ProductInfo
+        item={data?.productById}  
+        />
         <OrderCart />
       </div>
     </div>
