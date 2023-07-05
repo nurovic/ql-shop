@@ -8,13 +8,13 @@ const ListIem = ({ product }) => {
     console.log("Add To Favourite", product._id);
   };
   return (
-    <div className="rounded-lg border border-gray-200 mr-6 mb-8">
+    <div className="rounded-lg border border-gray-200 mr-8 mb-8">
       <div>
         <Image
           src="/images/product.jpg"
           width={500}
           height={500}
-          className="h-72 w-56 object-cover rounded-lg"
+          className="h-1/3 w-96 object-cover rounded-lg"
           alt="Picture of the author"
         />
       </div>
