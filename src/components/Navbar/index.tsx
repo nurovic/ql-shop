@@ -1,10 +1,19 @@
 import React from "react";
 import ProfilNav from './ProfilNav'
 import Link from 'next/link';
+import { useQuery } from "@apollo/client";
 
+import { GET_ME } from '../../graphQl/Query/users'
+import sliceAuthModal from "@/store/AuthModalSlice";
 
 const index : React.FC  = () => {
+  const authModal = sliceAuthModal();
 
+  const { error, loading, data } = useQuery(GET_ME);
+  if(data)  {
+    authModal.auth.name = data?.getMe?.name
+  } 
+  // (data === undefined) ?? (authModal.auth.name =  '')
   return (
     <div className="border-b-2 bg-mainColor">
       <div className="container mx-auto bg-main-color flex justify-between h-12 items-center text-white">

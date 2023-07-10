@@ -36,6 +36,8 @@ const onSubmit: SubmitHandler<FieldValues> = async (loginData: any ) => {
     variables : loginData
   })
   authModal.auth.name = res.data?.signin?.user?.name
+  const token = res.data?.signin?.token
+  localStorage.setItem('token', token)
   loginModal.onClose();
   setIsLoading(false);
 

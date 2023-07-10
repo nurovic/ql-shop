@@ -31,7 +31,7 @@ const ProfilNav = () => {
             <div onClick={handleShowNavbar}>{authModal?.auth?.name}</div>
 
             {viewNavbarModal.isOpen ? (
-              <div className="absolute text-xl right-24 mt-3 font-semibold text-black">
+              <div className="absolute text-xl  mt-3 font-semibold text-black">
                 <ProfilSubNavbar />
               </div>
             ) : null}

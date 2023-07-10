@@ -16,5 +16,13 @@ const GET_POSTS = gql`
   }
 }`
 
-export {GET_POSTS}
+const GET_ME = gql`
+  query getMe {
+    getMe {
+      name
+      email
+    }
+}`
+
+export {GET_POSTS,GET_ME}
 
