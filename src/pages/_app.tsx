@@ -1,4 +1,6 @@
 import "@/styles/globals.css";
+import type { ReactElement, ReactNode } from "react";
+import type { NextPage } from "next";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import {
@@ -6,12 +8,10 @@ import {
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
-  useQuery
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import Layout from "@/Layouts/Layout";
 import Dashboard from "@/Layouts/Dashboard";
-import { GET_ME } from '../graphQl/Query/users'
 
 const httpLink = createHttpLink({
   uri: "http://localhost:4000/graphql",
@@ -32,13 +32,16 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
-
-export default function App({ Component, pageProps }: AppProps) {
-  const { pathname } = useRouter();
-
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <ApolloProvider client={client}>
-      {pathname == "/dashboard" ? (
+      {Component.getLayout ? (
         <Layout>
           <Dashboard>
             <Component {...pageProps} />

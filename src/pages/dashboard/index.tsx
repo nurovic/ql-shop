@@ -1,9 +1,11 @@
 import React from 'react'
-import Dashboard from '@/Layouts/Dashboard'
-const index = () => {
+import DashboardLayout from '@/Layouts/Dashboard'
+const Dashboard = () => {
   return (
     <div>Dashboard</div>
   )
 }
 
-export default index
+Dashboard.getLayout = DashboardLayout;
+
+export default Dashboard
