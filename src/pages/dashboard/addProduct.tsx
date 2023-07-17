@@ -1,63 +1,75 @@
 import React, { useState } from "react";
 import DashboardLayout from "@/Layouts/Dashboard";
+import Button from "@/components/Button";
+import Input from "@/components/Input";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+
 const addProduct = () => {
-  const [productName, setProductName] = useState("");
-  const [description, setDescription] = useState("");
-  const [count, setCount] = useState("");
-  const [price, setPrice] =  useState("");
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(productName);
-  };
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FieldValues>({
+    defaultValues: {
+      productName: "",
+      description: "",
+      count: "",
+      price: "",
+    },
+  });
+
+  const onSubmit: SubmitHandler<FieldValues> = (data) => console.log(data);
+
   return (
     <div>
-      <form 
-      className="flex flex-col"
-      onSubmit={handleSubmit}>
-        <label htmlFor="title"> Product Name : 
-          <input
-            type="text"
-            id="title"
-            value={productName}
-            className="ml-2 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-
-            onChange={(e) => setProductName(e.target.value)}
+      <form
+        className="flex flex-col items-center mt-24"
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <div className="mb-4 w-3/4">
+          <Input
+            id="productName"
+            label="Product Name"
+            register={register}
+            errors={errors}
+            required
           />
-        </label>
-        <label htmlFor="description">
-          <input
-            type="text"
-            id="description"
-            value={description}
-            className=" px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-
-            onChange={(e) => setDescription(e.target.value)}
-          />
-        </label>
-        <label htmlFor="count">
-          <input
-            type="text"
+        </div>
+        <div className="mb-4 w-3/4">
+          <Input
             id="count"
-            value={count}
-            className=" px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-
-            onChange={(e) => setCount(e.target.value)}
+            label="Count"
+            register={register}
+            errors={errors}
+            type="number"
+            required
           />
-        </label>
-        <label htmlFor="price">
-          <input
-            type="text"
+        </div>
+
+        <div className="mb-4 w-3/4">
+          <Input
             id="price"
-            value={price}
-            className=" px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-
-            onChange={(e) => setPrice(e.target.value)}
+            label="Price"
+            register={register}
+            errors={errors}
+            type="number"
+            required
           />
-        </label>
+        </div>
+        <div className="mb-4 w-3/4">
+          <Input
+            id="description"
+            label="Description"
+            register={register}
+            errors={errors}
+            type="text"
+            required
+          />
+        </div>
         <button 
-                className="px-4 py-2 text-white bg-indigo-500 rounded-md hover:bg-indigo-600"
-
-        type="submit">Send</button>
+        className="bg-rose-300 hover:bg-rose-500 text-white font-bold py-2 px-4 rounded"
+        type="submit"> Send </button>
       </form>
     </div>
   );
