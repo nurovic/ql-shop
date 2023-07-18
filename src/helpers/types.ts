@@ -3,7 +3,7 @@ export type ProductType =  {
     __typename: string;
     productName: string;
     description: string;
-    price: any;
-    count: any;
+    price: number;
+    count: number;
     reviews?: any []
 }
