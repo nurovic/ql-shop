@@ -2,19 +2,20 @@ import { gql } from "@apollo/client";
 
 const GET_POSTS = gql`
   query users {
-  users{
-    _id
-    name
-    email
-    products {
+    users {
       _id
-      productName
-      reviews {
-        comment
+      name
+      email
+      products {
+        _id
+        productName
+        reviews {
+          comment
+        }
       }
     }
   }
-}`
+`;
 
 const GET_ME = gql`
   query getMe {
@@ -22,7 +23,25 @@ const GET_ME = gql`
       name
       email
     }
-}`
+  }
+`;
 
-export {GET_POSTS,GET_ME}
+const GET_OWN_PRODUCTS = gql`
+  query ownProducts {
+    ownProducts {
+      _id
+      productName
+      description
+      price
+      count
+      reviews {
+        comment
+        userId {
+          name
+        }
+      }
+    }
+  }
+`;
 
+export { GET_POSTS, GET_ME, GET_OWN_PRODUCTS };
