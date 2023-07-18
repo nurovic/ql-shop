@@ -4,6 +4,7 @@ import Input from "@/components/Input";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { useMutation } from "@apollo/client";
 import { CreateProduct } from "../../graphQl/Mutations/product";
+import { getDefaultValues } from "@apollo/client/utilities";
 
 const addProduct = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -11,6 +12,7 @@ const addProduct = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FieldValues>({
     defaultValues: {
@@ -23,7 +25,6 @@ const addProduct = () => {
   const [handleProductInfo] = useMutation(CreateProduct);
 
   const onSubmit: SubmitHandler<FieldValues> = async (productData: any) => {
-    console.log(productData)
     setIsLoading(true);
     const res = await handleProductInfo({variables : {
       productName: productData.productName,
@@ -31,7 +32,11 @@ const addProduct = () => {
       price: Number(productData.price),
       count: Number(productData.count)
     }});
-    console.log(res, "RES");
+    productData.productName = ""
+    productData.description = ""
+    productData.price = 0
+    productData.count = 0
+    reset(productData)
     setIsLoading(false);
   };
 
