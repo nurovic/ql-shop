@@ -1,12 +1,9 @@
-import React from "react";
-import { useQuery } from "@apollo/client";
-import { GET_ME } from '../graphQl/Query/users'
-import sliceAuthModal from "@/store/AuthModalSlice";
+import React from 'react'
 
 const index = () => {
+  return (
+    <div>index</div>
+  )
+}
 
-
-  return <div>Home</div>;
-};
-
-export default index;
+export default index
