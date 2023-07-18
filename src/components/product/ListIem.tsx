@@ -2,8 +2,9 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Button from "../Button";
+import { ProductType } from "../../helpers/types";
 
-const ListIem = ({ product }) => {
+const ListIem = ({ product }: { product: ProductType }) => {
   const handleAddToFavourite = () => {
     console.log("Add To Favourite", product._id);
   };
@@ -18,7 +19,10 @@ const ListIem = ({ product }) => {
           alt="Picture of the author"
         />
       </div>
-      <Link href={'/product/' + `${product._id}`} className="flex flex-col mt-2">
+      <Link
+        href={"/product/" + `${product._id}`}
+        className="flex flex-col mt-2"
+      >
         <div className="pl-2">{product.productName}</div>
         <div className="pl-2 mb-2">{product.price.toLocaleString("en")} </div>
         <Button

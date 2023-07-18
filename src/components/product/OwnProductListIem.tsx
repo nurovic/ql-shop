@@ -2,8 +2,9 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Button from "../Button";
+import { ProductType } from "../../helpers/types";
 
-const ListIem = ({ product }) => {
+const ListIem = ({ product }: { product: ProductType }) => {
   const handleAddToFavourite = () => {
     console.log("Edit Funciton, would new page", product._id);
   };
