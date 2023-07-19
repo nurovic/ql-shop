@@ -12,6 +12,7 @@ query GetProductId($id: ID!){
       name
     }
     reviews {
+      _id
       comment
       userId{
         name
