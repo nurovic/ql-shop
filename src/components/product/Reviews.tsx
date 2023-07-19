@@ -4,7 +4,7 @@ import Image from "next/image";
 const Reviews = ({ reviews }) => {
   return (
     <div className="grid grid-cols-1  gap-2 mt-12 mb-12">
-      {reviews?.map((review) => {
+      {reviews?.toReversed().map((review) => {
         return (
           <div 
           key={review._id}
