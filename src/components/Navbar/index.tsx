@@ -15,7 +15,7 @@ const index : React.FC  = () => {
   } 
   // (data === undefined) ?? (authModal.auth.name =  '')
   return (
-    <div className="border-b-2 bg-mainColor">
+    <div className="border-b-2 bg-mainColor z-50">
       <div className="container mx-auto bg-main-color flex justify-between h-12 items-center text-white">
         <Link href="/">Logo</Link>
         <div className="flex">
