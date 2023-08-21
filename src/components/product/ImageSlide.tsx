@@ -4,7 +4,7 @@ const ImageSlide = () => {
   return (
     <div className="w-full h-full flex flex-col items-center">
       <Image
-        src="/images/product.jpg"
+        src="/bs/product.jpg"
         width={500}
         height={500}
         className="h-full w-4/5 object-cover"
