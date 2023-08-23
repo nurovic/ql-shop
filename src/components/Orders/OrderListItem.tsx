@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import Image from "next/image";
 
 const OrderListItem = ({ item }: any) => {
+  const [orderCount, setOrderCount] = useState<number>(0) 
+
   return (
     <div className="flex flex-col mb-4 bg-gray-50 rounded-2xl">
       <div className="pl-4">
@@ -11,8 +13,8 @@ const OrderListItem = ({ item }: any) => {
     <div className="flex w-full pl-4">
     <Image
         src={"/images/product.jpg"}
-        width={200}
-        height={200}
+        width={150}
+        height={150}
         className="object-cover rounded-xl"
         alt="Picture of the author"
       />
@@ -29,7 +31,7 @@ const OrderListItem = ({ item }: any) => {
           className="object-cover rounded-xl"
           alt="Picture of the author"
         />
-          <div>2</div>
+          <div>{item.count} </div>
           <Image
           src={"/plus.svg"}
           width={25}

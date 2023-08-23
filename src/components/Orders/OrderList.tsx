@@ -3,11 +3,13 @@ import OrderListItem from './OrderListItem'
 
 const OrderList = () => {
   const list = [
-    {title: "nwm", id: "1"},
-    {title: "nwm", id: "1w"},
-    {title: "nwm", id: "1d"},
-    {title: "nwm", id: "1asd"},
-    {title: "nwm", id: "1asasdd"},
+    {title: "nwm", id: "1", count: 2},
+    {title: "nwm", id: "1asdw", count: 2},
+    {title: "nwm", id: "1wcas", count: 2},
+    {title: "nwm", id: "1w", count: 2},
+    {title: "nwm", id: "1dasd", count: 2},
+    {title: "nwm", id: "1asd", count: 2},
+    {title: "nwm", id: "1asasdd", count: 2},
   ] as any
   return (
     <div 
