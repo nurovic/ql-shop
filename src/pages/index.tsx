@@ -1,11 +1,6 @@
-import React from 'react'
-import Deme from '../components/deneme'
+import React from "react";
 const index = () => {
-  return (
-    <div>
-      <Deme />
-    </div>
-  )
-}
+  return <div></div>;
+};
 
-export default index
+export default index;
